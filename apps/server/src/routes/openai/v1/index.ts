@@ -348,7 +348,7 @@ export function createV1CompletionsRoutes(fluxService: FluxService, billingServi
       fetch(`${baseUrl}audio/speech`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body),
+        body: JSON.stringify({ ...body, model: requestModel }),
       }))
 
     const durationMs = Date.now() - startedAt
